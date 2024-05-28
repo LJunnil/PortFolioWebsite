@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- Created By CodingNepal -->
+<!-- Created By Junnil -->
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -100,6 +100,12 @@
     <!-- skills section start -->
     <section class="skills" id="skills">
         <h2 class="title">My skills</h2> 
+
+        <div class="bubble subtle-float" style="top: 20%; left: 30%;"></div>
+        <div class="bubble elegant-pop" style="top: 50%; left: 60%;"></div>
+        <div class="bubble hover-bubble" style="top: 80%; left: 40%;"></div>
+        <div class="bubble parallax-bubble" style="top: 70%; left: 70%;"></div>
+
         <table class="tbSkills">
             <tr>
                 <!-- HTML,CSS,JS Skills-->
@@ -290,7 +296,94 @@
 /* Fos Skills CSS comment */
 
 
+
+<script>
+    
+
+// Function to create bubbles
+function createBubbles() {
+    // Number of bubbles to create
+    const numBubbles = 4;
+
+    for (let i = 0; i < numBubbles; i++) {
+        const bubble = document.createElement('div');
+        bubble.classList.add('bubble');
+        // Randomly position the bubble
+        bubble.style.left = Math.random() * window.innerWidth + 'px';
+        bubble.style.top = Math.random() * window.innerHeight + 'px';
+        // Append the bubble to the body
+        document.body.appendChild(bubble);
+    }
+}
+
+// Call the function to create bubbles when the page loads
+window.onload = createBubbles;
+
+</script>
+
     <style>
+
+/* BUBBLE CSS */
+.bubble {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            position: fixed;
+            pointer-events: none;
+        }
+
+        /* Subtle Floating Bubbles */
+        .bubble.subtle-float {
+            background-color: rgba(0, 153, 255, 0.5); /* Light blue and transparent */
+            animation: subtle-float 10s infinite linear;
+        }
+
+        @keyframes subtle-float {
+            0% { transform: translate(0, 0); }
+            25% { transform: translate(20px, -20px); }
+            50% { transform: translate(-20px, 20px); }
+            75% { transform: translate(-20px, -20px); }
+            100% { transform: translate(20px, 20px); }
+        }
+
+        /* Elegant Bubble Pops */
+        .bubble.elegant-pop {
+            background-color: rgba(255, 255, 255, 0.7); /* White and transparent */
+            animation: elegant-pop 5s infinite ease-in-out;
+        }
+
+        @keyframes elegant-pop {
+            0% { opacity: 0; }
+            50% { opacity: 1; }
+            100% { opacity: 0; }
+        }
+
+        /* Hover-Activated Bubbles */
+        .bubble.hover-bubble {
+            background-color: rgba(0, 0, 0, 0.5); /* Black and transparent */
+            animation: hover-bubble 5s infinite alternate;
+        }
+
+        @keyframes hover-bubble {
+            0% { transform: scale(1); }
+            100% { transform: scale(1.2); }
+        }
+
+        /* Background Bubbles with Parallax */
+        .bubble.parallax-bubble {
+            background-color: rgba(118, 255, 3, 0.7); /* Neon green and transparent */
+            animation: parallax-bubble 15s infinite alternate;
+        }
+
+        @keyframes parallax-bubble {
+            0% { transform: translate(0, 0); }
+            50% { transform: translate(50px, -50px); }
+            100% { transform: translate(-50px, 50px); }
+        }
+
+
+
+
         .skills {
             text-align: center;
             margin: 20px;
