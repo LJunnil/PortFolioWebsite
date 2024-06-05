@@ -189,8 +189,8 @@ section .title::after{
     font-weight: 600;
     margin-left: -3px;
 }
-.home .home-content .text-3{
-    font-size: 40px;
+.home .home-content .texts-3{
+    font-size: 20px;
     margin: 5px 0;
 }
 .home .home-content .text-3 span{
