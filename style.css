@@ -12,7 +12,7 @@ html{
 }
 
 #inner-shadow-companion{
-display: none;
+display: none!;
 }
 /* custom scroll bar */
 ::-webkit-scrollbar {
