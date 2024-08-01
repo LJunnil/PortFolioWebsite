@@ -11,6 +11,9 @@ html{
     scroll-behavior: smooth;
 }
 
+#inner-shadow-companion{
+display: none;
+}
 /* custom scroll bar */
 ::-webkit-scrollbar {
     width: 10px;
