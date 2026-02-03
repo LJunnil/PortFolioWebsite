@@ -79,9 +79,11 @@ window.addEventListener('scroll', () => {
     if (currentScroll > 100) {
         navbar.style.background = 'rgba(10, 14, 39, 0.95)';
         navbar.style.boxShadow = '0 4px 24px rgba(0, 0, 0, 0.2)';
+        navbar.classList.add('scrolled');
     } else {
         navbar.style.background = 'rgba(15, 23, 42, 0.8)';
         navbar.style.boxShadow = 'none';
+        navbar.classList.remove('scrolled');
     }
     
     lastScroll = currentScroll;
@@ -135,25 +137,91 @@ window.addEventListener('scroll', highlightNavigation);
 // Initial call to set active navigation on page load
 highlightNavigation();
 
-// Lazy loading images
+// Lazy loading images with loading state
 if ('IntersectionObserver' in window) {
     const imageObserver = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 const img = entry.target;
+                const projectImage = img.closest('.project-image');
+                
+                // Show loading state
+                if (projectImage) {
+                    projectImage.classList.add('loading');
+                }
+                
+                // Load image
                 if (img.dataset.src) {
                     img.src = img.dataset.src;
-                    img.removeAttribute('data-src');
+                    
+                    img.onload = () => {
+                        img.removeAttribute('data-src');
+                        if (projectImage) {
+                            projectImage.classList.remove('loading');
+                            projectImage.classList.add('loaded');
+                        }
+                    };
+                    
+                    img.onerror = () => {
+                        console.error('Failed to load image:', img.dataset.src);
+                        if (projectImage) {
+                            projectImage.classList.remove('loading');
+                        }
+                    };
+                    
+                    observer.unobserve(img);
+                } else {
+                    // Image already has src
+                    if (img.complete) {
+                        if (projectImage) {
+                            projectImage.classList.remove('loading');
+                            projectImage.classList.add('loaded');
+                        }
+                    } else {
+                        img.onload = () => {
+                            if (projectImage) {
+                                projectImage.classList.remove('loading');
+                                projectImage.classList.add('loaded');
+                            }
+                        };
+                    }
                     observer.unobserve(img);
                 }
             }
         });
+    }, {
+        rootMargin: '50px'
     });
 
-    document.querySelectorAll('img[data-src]').forEach(img => {
+    // Observe all project images
+    document.querySelectorAll('.project-image img').forEach(img => {
         imageObserver.observe(img);
     });
 }
+
+// Enhanced project card interactions
+document.querySelectorAll('.project-card').forEach(card => {
+    // Add 3D tilt effect on mouse move (desktop only)
+    if (window.innerWidth > 768) {
+        card.addEventListener('mousemove', (e) => {
+            const rect = card.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            
+            const centerX = rect.width / 2;
+            const centerY = rect.height / 2;
+            
+            const rotateX = (y - centerY) / 20;
+            const rotateY = (centerX - x) / 20;
+            
+            card.style.transform = `translateY(-8px) perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+        });
+        
+        card.addEventListener('mouseleave', () => {
+            card.style.transform = '';
+        });
+    }
+});
 
 // Handle orientation change on mobile
 window.addEventListener('orientationchange', () => {
