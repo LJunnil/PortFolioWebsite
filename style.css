@@ -95,68 +95,15 @@ body.light-mode .navbar {
 
 .logo-text {
     font-size: 2rem;
-<<<<<<< HEAD
     font-weight: 900;
-=======
-    font-weight: 800;
->>>>>>> 1567a558e0f52e6936f71f4c132c189399db1fa3
     background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-<<<<<<< HEAD
     letter-spacing: -0.05em;
     transition: all 0.3s ease;
     position: relative;
     display: inline-block;
-=======
-    letter-spacing: -0.02em;
-    transition: var(--transition);
-    position: relative;
-    display: inline-block;
-}
-
-/* Optional: Add a subtle underline accent */
-.logo-text::after {
-    content: '';
-    position: absolute;
-    bottom: -2px;
-    left: 0;
-    width: 100%;
-    height: 2px;
-    background: var(--primary);
-    transform: scaleX(0);
-    transition: transform 0.3s ease;
-}
-
-.logo:hover .logo-text {
-    transform: scale(1.05);
-    filter: drop-shadow(0 0 15px rgba(99, 102, 241, 0.5));
-}
-
-.logo:hover .logo-text::after {
-    transform: scaleX(1);
-}
-
-.logo:active .logo-text {
-    transform: scale(0.98);
-}
-
-/* Scrolled state */
-.navbar.scrolled .logo-text {
-    font-size: 1.75rem;
-}
-
-/* Mobile responsive */
-@media (max-width: 480px) {
-    .logo-text {
-        font-size: 1.5rem;
-    }
-    
-    .navbar.scrolled .logo-text {
-        font-size: 1.35rem;
-    }
->>>>>>> 1567a558e0f52e6936f71f4c132c189399db1fa3
 }
 
 .logo-dot {
@@ -1045,12 +992,4 @@ section {
     .carousel-btn {
         display: none;
     }
-<<<<<<< HEAD
 }
-=======
-
-
-
-    
-}
->>>>>>> 1567a558e0f52e6936f71f4c132c189399db1fa3
