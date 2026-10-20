@@ -1,439 +1,136 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Junnil Jay Estillore | Full-Stack Developer</title>
-    <link rel="icon" type="image/png" href="images/Junnil-Favicon.png">
-    <link rel="apple-touch-icon" href="images/Junnil-Favicon.png">
-    <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Poppins:wght@600;700;800;900&display=swap" rel="stylesheet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Junnil Jay Estillore | Full-Stack Developer</title>
+<link rel="icon" type="image/png" href="images/Junnil-Favicon.png">
+<link rel="apple-touch-icon" href="images/Junnil-Favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="container">
-            <div class="nav-content">
-                <a href="#home" class="logo">
-                    <span class="logo-text">Jay</span>
-                    <span class="logo-dot">.</span>
-                </a>
-                
-                <ul class="nav-menu">
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#skills">Skills</a></li>
-                    <li><a href="#work">Work</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-                
-                <!-- Simple Theme Toggle -->
-                <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
-                    <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <circle cx="12" cy="12" r="5"></circle>
-                        <line x1="12" y1="1" x2="12" y2="3"></line>
-                        <line x1="12" y1="21" x2="12" y2="23"></line>
-                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-                        <line x1="1" y1="12" x2="3" y2="12"></line>
-                        <line x1="21" y1="12" x2="23" y2="12"></line>
-                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-                    </svg>
-                    <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-                    </svg>
-                </button>
-                
-                <button class="hamburger" aria-label="Menu">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
-            </div>
-        </div>
+<header class="nav">
+  <div class="wrap nav-in">
+    <a href="#home" class="logo">Jay<span>.</span></a>
+    <nav id="menu" class="menu" aria-label="Main">
+      <a href="#home" data-i18n="nav.home">Home</a>
+      <a href="#about" data-i18n="nav.about">About</a>
+      <a href="#skills" data-i18n="nav.skills">Skills</a>
+      <a href="#work" data-i18n="nav.work">Work</a>
+      <a href="#contact" data-i18n="nav.contact">Contact</a>
     </nav>
+    <div class="tools">
+      <div class="lang">
+        <button id="lang-btn" class="icon-btn lang-btn" aria-haspopup="listbox" aria-expanded="false" aria-label="Language">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 0 1 0 20M12 2a15 15 0 0 0 0 20"/></svg>
+          <span id="lang-label">EN</span>
+        </button>
+        <ul id="lang-list" class="lang-list" role="listbox" hidden></ul>
+      </div>
+      <button id="theme-toggle" class="icon-btn" aria-label="Toggle theme">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      </button>
+      <button id="burger" class="icon-btn burger" aria-label="Menu" aria-controls="menu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <div class="hero-badge">Available for Freelance</div>
-                <h1 class="hero-title">
-                    <span class="gradient-text">Full-Stack Developer</span>
-                    <br>Building Digital Excellence
-                </h1>
-                <p class="hero-description">
-                    Transforming ideas into powerful web solutions with 5+ years of expertise in 
-                    modern technologies. Specialized in creating scalable, user-centric applications 
-                    that drive business growth.
-                </p>
-                <div class="hero-buttons">
-                    <a href="#work" class="btn btn-primary">View Projects</a>
-                    <a href="#contact" class="btn btn-secondary">Get In Touch</a>
-                </div>
-                <div class="hero-stats">
-                    <div class="stat-item">
-                        <div class="stat-number">5+</div>
-                        <div class="stat-label">Years Experience</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number">20+</div>
-                        <div class="stat-label">Projects Completed</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number">100%</div>
-                        <div class="stat-label">Client Satisfaction</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="hero-shape"></div>
-    </section>
+<main>
+<section id="home" class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <p class="badge"><i></i><span data-i18n="hero.badge">Available for freelance</span></p>
+      <h1><span data-i18n="hero.t1">Full-Stack Developer</span><br><em data-i18n="hero.t2">Building digital products that work</em></h1>
+      <p class="lead" data-i18n="hero.desc">5+ years of experience creating scalable, user-centric web applications that help businesses grow.</p>
+      <div class="actions">
+        <a href="#work" class="btn btn-primary" data-i18n="hero.cta1">View projects</a>
+        <a href="#contact" class="btn btn-ghost" data-i18n="hero.cta2">Get in touch</a>
+      </div>
+      <dl class="facts">
+        <div><dt>5+</dt><dd data-i18n="hero.s1">Years of experience</dd></div>
+        <div><dt>20+</dt><dd data-i18n="hero.s2">Projects completed</dd></div>
+        <div><dt>100%</dt><dd data-i18n="hero.s3">Client satisfaction</dd></div>
+      </dl>
+    </div>
+    <figure class="portrait">
+      <img src="images/Jay.jpg" alt="Junnil Jay Estillore">
+      <figcaption><strong>Junnil Jay Estillore</strong><span data-i18n="city">Cebu, Philippines</span></figcaption>
+    </figure>
+  </div>
+</section>
 
-    <!-- About Section -->
-    <section id="about" class="about">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-label">Who I Am</span>
-                <h2 class="section-title">About Me</h2>
-            </div>
-            <div class="about-content">
-                <div class="about-image">
-                    <img src="images/Jay.jpg" alt="Junnil Jay Estillore">
-                    <div class="about-shape"></div>
-                </div>
-                <div class="about-text">
-                    <h3>Crafting exceptional digital experiences</h3>
-                    <p>
-                        I'm a passionate Full-Stack Developer based in Cebu, Philippines, with a proven 
-                        track record of delivering high-quality web solutions. My expertise spans across 
-                        modern frontend frameworks, robust backend systems, and intuitive mobile applications.
-                    </p>
-                    <p>
-                        With a deep understanding of both client-side and server-side technologies, I create 
-                        seamless, performant applications that not only meet but exceed expectations. From 
-                        e-commerce platforms to corporate websites, I bring technical excellence and creative 
-                        problem-solving to every project.
-                    </p>
-                    <div class="about-info">
-                        <div class="info-item">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
-                                <circle cx="12" cy="10" r="3"></circle>
-                            </svg>
-                            <span>Cebu, Philippines</span>
-                        </div>
-                        <div class="info-item">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
-                                <polyline points="22,6 12,13 2,6"></polyline>
-                            </svg>
-                            <span>jay.estillore.ph@gmail.com</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+<section id="about" class="alt">
+  <div class="wrap narrow">
+    <h2 data-i18n="about.t">About me</h2>
+    <h3 data-i18n="about.h">Crafting exceptional digital experiences</h3>
+    <p data-i18n="about.p1">I'm a Full-Stack Developer based in Cebu, Philippines, delivering high-quality web solutions across modern frontend frameworks, robust backend systems and intuitive mobile apps.</p>
+    <p data-i18n="about.p2">From e-commerce platforms to corporate websites, I combine technical excellence with creative problem-solving to build fast, seamless applications.</p>
+  </div>
+</section>
 
-    <!-- Skills Section -->
-    <section id="skills" class="skills">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-label">My Expertise</span>
-                <h2 class="section-title">Technical Skills</h2>
-            </div>
-            <div class="skills-grid">
-                <div class="skill-card">
-                    <div class="skill-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <polyline points="16 18 22 12 16 6"></polyline>
-                            <polyline points="8 6 2 12 8 18"></polyline>
-                        </svg>
-                    </div>
-                    <h3>Frontend Development</h3>
-                    <p>Building responsive, interactive interfaces with modern frameworks and best practices</p>
-                    <div class="skill-tags">
-                        <span>HTML5</span>
-                        <span>CSS3</span>
-                        <span>JavaScript</span>
-                        <span>React</span>
-                        <span>Bootstrap</span>
-                    </div>
-                </div>
+<section id="skills">
+  <div class="wrap">
+    <h2 data-i18n="skills.t">Technical skills</h2>
+    <div class="grid skills">
+      <article><h3 data-i18n="sk.1">Frontend development</h3><p class="tags"><span>HTML5</span><span>CSS3</span><span>JavaScript</span><span>React</span><span>Bootstrap</span></p></article>
+      <article><h3 data-i18n="sk.2">Backend development</h3><p class="tags"><span>PHP</span><span>Laravel</span><span>ASP.NET</span><span>C#</span><span>Node.js</span></p></article>
+      <article><h3 data-i18n="sk.3">Mobile development</h3><p class="tags"><span>React Native</span><span>TypeScript</span></p></article>
+      <article><h3 data-i18n="sk.4">CMS &amp; e-commerce</h3><p class="tags"><span>WordPress</span><span>Shopify</span><span>WooCommerce</span></p></article>
+      <article><h3 data-i18n="sk.5">Database management</h3><p class="tags"><span>MySQL</span><span>SQL</span></p></article>
+      <article><h3 data-i18n="sk.6">Automation &amp; tools</h3><p class="tags"><span>n8n</span><span>Odoo</span><span>GitHub</span><span>Photoshop</span></p></article>
+    </div>
+  </div>
+</section>
 
-                <div class="skill-card">
-                    <div class="skill-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect>
-                            <rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect>
-                            <line x1="6" y1="6" x2="6.01" y2="6"></line>
-                            <line x1="6" y1="18" x2="6.01" y2="18"></line>
-                        </svg>
-                    </div>
-                    <h3>Backend Development</h3>
-                    <p>Creating robust server-side solutions with secure, scalable architectures</p>
-                    <div class="skill-tags">
-                        <span>PHP</span>
-                        <span>Laravel</span>
-                        <span>ASP.NET</span>
-                        <span>C#</span>
-                        <span>Node.js</span>
-                    </div>
-                </div>
+<section id="work" class="alt">
+  <div class="wrap">
+    <h2 data-i18n="work.t">Featured projects</h2>
+    <p class="sub" data-i18n="work.s">Recent websites and systems I've built.</p>
+    <div class="grid projects">
+      <a class="card" target="_blank" rel="noopener" href="https://shopsantebarley.com/"><img src="images/bigbuymall-ph.png" alt="BigBuyMall" loading="lazy"><h3>BigBuyMall</h3><p data-i18n="c.ecom">E-commerce platform</p></a>
+      <a class="card" target="_blank" rel="noopener" href="https://saramendes.pt/"><img src="images/saramendes.png" alt="Sara Mendes" loading="lazy"><h3>Sara Mendes</h3><p data-i18n="c.folio">Professional portfolio</p></a>
+      <a class="card" href="#"><img src="images/Chart-Categories.png" alt="System Deduction Summary" loading="lazy"><h3>System Deduction Summary</h3><p data-i18n="c.sys">Internal system</p></a>
+      <a class="card" target="_blank" rel="noopener" href="https://fashiontrends.ph/"><img src="images/fashiontrends-ph.png" alt="FashionTrends" loading="lazy"><h3>FashionTrends</h3><p data-i18n="c.ecom">E-commerce platform</p></a>
+      <a class="card" target="_blank" rel="noopener" href="https://sawo.com/"><img src="images/sawo.png" alt="Sawo" loading="lazy"><h3>Sawo</h3><p data-i18n="c.corp">Company website</p></a>
+      <a class="card" target="_blank" rel="noopener" href="https://www.revedroy.com/"><img src="images/revedroy.png" alt="Reved Roy" loading="lazy"><h3>Reved Roy</h3><p data-i18n="c.brand">Personal brand</p></a>
+      <a class="card" href="#"><img src="images/CMAPHome.png" alt="Chemical Management System" loading="lazy"><h3>Chemical Management System</h3><p data-i18n="c.sys">Internal system</p></a>
+      <a class="card" target="_blank" rel="noopener" href="https://fashiontrends.ph/"><img src="images/sauna-ph.png" alt="Saunaph" loading="lazy"><h3>Saunaph</h3><p data-i18n="c.corp">Company website</p></a>
+      <a class="card" target="_blank" rel="noopener" href="https://www.alfredhkurlandbooks.com/"><img src="images/alfredhkurlandbooks.png" alt="Alfred H Kurland Books" loading="lazy"><h3>Alfred H Kurland Books</h3><p data-i18n="c.author">Author website</p></a>
+      <a class="card" target="_blank" rel="noopener" href="https://www.thebankruptcyprofessionals.com/"><img src="images/thebankruptcyprofessionals.png" alt="The Bankruptcy Professionals" loading="lazy"><h3>The Bankruptcy Professionals</h3><p data-i18n="c.legal">Legal services</p></a>
+      <a class="card" target="_blank" rel="noopener" href="https://alliancecaremedical.com/"><img src="images/alliancecaremedical.png" alt="Alliance Care Medical" loading="lazy"><h3>Alliance Care Medical</h3><p data-i18n="c.health">Healthcare platform</p></a>
+    </div>
+    <p class="center"><a class="btn btn-primary" target="_blank" rel="noopener" href="https://drive.google.com/drive/folders/1VBI-0gdEOCTya2iPTjtY3J3S4Wp9tLuc" data-i18n="work.all">View all system projects</a></p>
+  </div>
+</section>
 
-                <div class="skill-card">
-                    <div class="skill-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
-                            <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
-                        </svg>
-                    </div>
-                    <h3>Mobile Development</h3>
-                    <p>Developing cross-platform mobile apps with beautiful, native-like experiences</p>
-                    <div class="skill-tags">
-                        <span>React Native</span>
-                        <span>TypeScript</span>
-                        <span>Mobile UI/UX</span>
-                    </div>
-                </div>
+<section id="contact">
+  <div class="wrap contact-grid">
+    <div>
+      <h2 data-i18n="ct.t">Let's work together</h2>
+      <p class="sub" data-i18n="ct.p">Whether you need a complete website, a mobile app, or just want to talk through an idea, reach out any time.</p>
+      <ul class="links">
+        <li><a href="mailto:jay.estillore.ph@gmail.com"><b data-i18n="ct.email">Email</b>jay.estillore.ph@gmail.com</a></li>
+        <li><a href="https://www.linkedin.com/in/junnil-jay-e-551657211" target="_blank" rel="noopener"><b>LinkedIn</b>Junnil Jay Estillore</a></li>
+        <li><span><b data-i18n="ct.loc">Location</b><span data-i18n="city">Cebu, Philippines</span></span></li>
+      </ul>
+    </div>
+    <form class="form" action="https://formspree.io/f/xbjerpkq" method="POST">
+      <input type="text" name="name" data-i18n-ph="f.name" placeholder="Your name" aria-label="Name" required>
+      <input type="email" name="email" data-i18n-ph="f.email" placeholder="Your email" aria-label="Email" required>
+      <input type="text" name="subject" data-i18n-ph="f.subject" placeholder="Subject" aria-label="Subject" required>
+      <textarea name="message" rows="6" data-i18n-ph="f.msg" placeholder="Your message" aria-label="Message" required></textarea>
+      <button type="submit" class="btn btn-primary" data-i18n="f.send">Send message</button>
+    </form>
+  </div>
+</section>
+</main>
 
-                <div class="skill-card">
-                    <div class="skill-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <circle cx="12" cy="12" r="10"></circle>
-                            <circle cx="12" cy="12" r="4"></circle>
-                            <line x1="4.93" y1="4.93" x2="9.17" y2="9.17"></line>
-                            <line x1="14.83" y1="14.83" x2="19.07" y2="19.07"></line>
-                            <line x1="14.83" y1="9.17" x2="19.07" y2="4.93"></line>
-                            <line x1="14.83" y1="9.17" x2="18.36" y2="5.64"></line>
-                            <line x1="4.93" y1="19.07" x2="9.17" y2="14.83"></line>
-                        </svg>
-                    </div>
-                    <h3>CMS & E-Commerce</h3>
-                    <p>Implementing powerful content management and online store solutions</p>
-                    <div class="skill-tags">
-                        <span>WordPress</span>
-                        <span>Shopify</span>
-                        <span>WooCommerce</span>
-                    </div>
-                </div>
-
-                <div class="skill-card">
-                    <div class="skill-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <ellipse cx="12" cy="5" rx="9" ry="3"></ellipse>
-                            <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path>
-                            <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path>
-                        </svg>
-                    </div>
-                    <h3>Database Management</h3>
-                    <p>Designing efficient database structures for optimal data handling</p>
-                    <div class="skill-tags">
-                        <span>MySQL</span>
-                        <span>SQL</span>
-                        <span>Database Design</span>
-                    </div>
-                </div>
-
-                <div class="skill-card">
-                    <div class="skill-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <circle cx="12" cy="12" r="10"></circle>
-                            <polyline points="12 6 12 12 16 14"></polyline>
-                        </svg>
-                    </div>
-                    <h3>Automation & Tools</h3>
-                    <p>Leveraging modern tools to streamline workflows and boost productivity</p>
-                    <div class="skill-tags">
-                        <span>n8n</span>
-                        <span>Odoo</span>
-                        <span>GitHub</span>
-                        <span>Photoshop</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Projects Section with Horizontal Carousel -->
-    <section id="work" class="work">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-label">Portfolio</span>
-                <h2 class="section-title">Featured Projects</h2>
-            </div>
-            
-            <div class="carousel-wrapper">
-                <button class="carousel-btn carousel-btn-prev" aria-label="Previous">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <polyline points="15 18 9 12 15 6"></polyline>
-                    </svg>
-                </button>
-                
-                <div class="carousel">
-                    <div class="carousel-track">
-                        <a href="https://shopsantebarley.com/" target="_blank" class="carousel-item">
-                            <img src="images/bigbuymall-ph.png" alt="BigBuyMall">
-                            <h3>BigBuyMall</h3>
-                            <p>E-Commerce Platform</p>
-                        </a>
-                        
-                        <a href="https://saramendes.pt/" target="_blank" class="carousel-item">
-                            <img src="images/saramendes.png" alt="Sara Mendes">
-                            <h3>Sara Mendes</h3>
-                            <p>Professional Portfolio</p>
-                        </a>
-                        
-                        <a href="#" class="carousel-item">
-                            <img src="images/Chart-Categories.png" alt="System Deduction Summary">
-                            <h3>System Deduction Summary</h3>
-                            <p>SDS System</p>
-                        </a>
-                        
-                        <a href="https://fashiontrends.ph/" target="_blank" class="carousel-item">
-                            <img src="images/fashiontrends-ph.png" alt="FashionTrends">
-                            <h3>FashionTrends</h3>
-                            <p>Fashion E-Commerce</p>
-                        </a>
-                        
-                        <a href="https://sawo.com/" target="_blank" class="carousel-item">
-                            <img src="images/sawo.png" alt="Sawo">
-                            <h3>Sawo</h3>
-                            <p>Company Website</p>
-                        </a>
-                        
-                        <a href="https://www.revedroy.com/" target="_blank" class="carousel-item">
-                            <img src="images/revedroy.png" alt="Reved Roy">
-                            <h3>Reved Roy</h3>
-                            <p>Personal Brand</p>
-                        </a>
-                        
-                        <a href="#" class="carousel-item">
-                            <img src="images/CMAPHome.png" alt="Chemical Management System">
-                            <h3>Chemical Management System</h3>
-                            <p>System</p>
-                        </a>
-                        
-                        <a href="https://fashiontrends.ph/" target="_blank" class="carousel-item">
-                            <img src="images/sauna-ph.png" alt="Saunaph">
-                            <h3>Saunaph</h3>
-                            <p>Company Website</p>
-                        </a>
-                        
-                        <a href="https://www.alfredhkurlandbooks.com/" target="_blank" class="carousel-item">
-                            <img src="images/alfredhkurlandbooks.png" alt="Alfred H Kurland Books">
-                            <h3>Alfred H Kurland Books</h3>
-                            <p>Author Portfolio</p>
-                        </a>
-                        
-                        <a href="https://www.thebankruptcyprofessionals.com/" target="_blank" class="carousel-item">
-                            <img src="images/thebankruptcyprofessionals.png" alt="The Bankruptcy Professionals">
-                            <h3>The Bankruptcy Professionals</h3>
-                            <p>Legal Services</p>
-                        </a>
-                        
-                        <a href="https://alliancecaremedical.com/" target="_blank" class="carousel-item">
-                            <img src="images/alliancecaremedical.png" alt="Alliance Care Medical">
-                            <h3>Alliance Care Medical</h3>
-                            <p>Healthcare Platform</p>
-                        </a>
-                    </div>
-                </div>
-                
-                <button class="carousel-btn carousel-btn-next" aria-label="Next">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <polyline points="9 18 15 12 9 6"></polyline>
-                    </svg>
-                </button>
-            </div>
-            
-            <div class="view-all-projects">
-                <a href="https://drive.google.com/drive/folders/1VBI-0gdEOCTya2iPTjtY3J3S4Wp9tLuc" target="_blank" class="btn btn-primary">
-                    View All System Projects
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-label">Get In Touch</span>
-                <h2 class="section-title">Let's Work Together</h2>
-            </div>
-            <div class="contact-content">
-                <div class="contact-info">
-                    <h3>Ready to bring your project to life?</h3>
-                    <p>
-                        I'm always interested in hearing about new projects and opportunities. 
-                        Whether you need a complete website, mobile app, or just want to discuss 
-                        your ideas, feel free to reach out.
-                    </p>
-                    <div class="contact-details">
-                        <a href="mailto:jay.estillore.ph@gmail.com" class="contact-item">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
-                                <polyline points="22,6 12,13 2,6"></polyline>
-                            </svg>
-                            <div>
-                                <span class="label">Email</span>
-                                <span class="value">jay.estillore.ph@gmail.com</span>
-                            </div>
-                        </a>
-                        <a href="https://www.linkedin.com/in/junnil-jay-e-551657211" target="_blank" class="contact-item">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
-                                <rect x="2" y="9" width="4" height="12"></rect>
-                                <circle cx="4" cy="4" r="2"></circle>
-                            </svg>
-                            <div>
-                                <span class="label">LinkedIn</span>
-                                <span class="value">Junnil Jay Estillore</span>
-                            </div>
-                        </a>
-                        <div class="contact-item">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
-                                <circle cx="12" cy="10" r="3"></circle>
-                            </svg>
-                            <div>
-                                <span class="label">Location</span>
-                                <span class="value">Cebu, Philippines</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <form class="contact-form" action="https://formspree.io/f/xbjerpkq" method="POST">
-                    <div class="form-group">
-                        <input type="text" name="name" placeholder="Your Name" required>
-                    </div>
-                    <div class="form-group">
-                        <input type="email" name="email" placeholder="Your Email" required>
-                    </div>
-                    <div class="form-group">
-                        <input type="text" name="subject" placeholder="Subject" required>
-                    </div>
-                    <div class="form-group">
-                        <textarea name="message" rows="6" placeholder="Your Message" required></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-primary">Send Message</button>
-                </form>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <p>&copy; <span id="year"></span> Junnil Jay Estillore. All rights reserved.</p>
-        </div>
-    </footer>
-
-    <script src="script.js"></script>
+<footer class="foot"><div class="wrap">&copy; <span id="year"></span> Junnil Jay Estillore. <span data-i18n="rights">All rights reserved.</span></div></footer>
+<script src="script.js"></script>
 </body>
 </html>
